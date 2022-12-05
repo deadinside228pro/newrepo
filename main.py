@@ -1,1 +1,1 @@
-bebra
+print('bebra')
