@@ -1,14 +1,15 @@
-class Woolf:
-    def __init__(self, name, howmanyfoodeat=float, age=int, size=float):
-        self.__Name = name
+class Animal:
+
+    def __init__(self, name, age=int, howmanyfoodeat=float, size=float, species=str,habitat=str, typeOfFood = list, squad=str,voice=str ):
+        self.__Name =name
         self.__Food = howmanyfoodeat
         self.__Age = age
         self.__Size = size
-        self.__Species = "волк"
-        self.__Habitat = "смешанные леса"
-        self.__TypeOfFood = ["мясо","рыба"]
-        self.__Squad = "хищник"
-        self.__Voice = "гав гав ауууу"
+        self.__Species = species
+        self.__Habitat = habitat
+        self.__TypeOfFood = typeOfFood
+        self.__Squad = squad
+        self.__Voice = voice
         self.__IsFedded = False
         self.__EatenFood=0
 
@@ -16,42 +17,53 @@ class Woolf:
     def needdedFood(self):
         return self.__Food
 
-
     @property
     def isFedded(self):
-        if self.__EatenFood>=self.__Food:
-            self.__IsFedded=True
+        if self.__EatenFood >= self.__Food:
+            self.__IsFedded = True
             return print(self.__IsFedded)
         else:
             return print(self.__IsFedded)
 
-
-
-
     @property
     def name(self):
         return self.__Name
+
     @name.setter
-    def name(self,newName):
-        self.__Name=newName
+    def name(self, newName):
+        self.__Name = newName
+
+    @property
+    def squad(self):
+        return self.__Squad
+
+    @property
+    def habitat(self):
+        return self.__Habitat
+
+    @property
+    def species(self):
+        return self.__Species
 
     @property
     def age(self):
         return self.__Age
+
     @age.setter
-    def age(self,newAge):
-        if newAge>=0:
-            self.__Age=newAge
+    def age(self, newAge):
+        if newAge >= 0:
+            self.__Age = newAge
         else:
             print("так нельзя")
 
     @property
     def size(self):
         return self.__Size
+
     @size.setter
-    def size(self,newSize):
-        if newSize>=0:
-            self.__Size=newSize
+    def size(self, newSize):
+        if newSize >= 0:
+            self.__Size = newSize
         else:
             print("так нельзя")
 
@@ -65,14 +77,10 @@ class Woolf:
         else:
             return print("я больше не буду")
 
-
     @property
     def voice(self):
-        return print(self.__Name + ":",self.__Voice)
-
-
-
+        return print(self.__Name + ":", self.__Voice)
 
     @property
     def play(self):
-        print(self.__Name + ":","*играет*")
+        print(self.__Name + ":", "*играет*")
