@@ -1,37 +1,37 @@
 class Animal:
 
     def __init__(self, name, age=int, howmanyfoodeat=float, size=float, species=str,habitat=str, typeOfFood = list, squad=str,voice=str ):
-        self.__Name =name
-        self.__Food = howmanyfoodeat
+        self._Name =name
+        self._Food = howmanyfoodeat
         self.__Age = age
         self.__Size = size
         self.__Species = species
         self.__Habitat = habitat
-        self.__TypeOfFood = typeOfFood
+        self._TypeOfFood = typeOfFood
         self.__Squad = squad
-        self.__Voice = voice
-        self.__IsFedded = False
-        self.__EatenFood=0
+        self._Voice = voice
+        self._IsFedded = False
+        self._EatenFood=0
 
     @property
     def needdedFood(self):
-        return self.__Food
+        return self._Food
 
     @property
     def isFedded(self):
-        if self.__EatenFood >= self.__Food:
-            self.__IsFedded = True
-            return print(self.__IsFedded)
+        if self._EatenFood >= self._Food:
+            self._IsFedded = True
+            return print(self._IsFedded)
         else:
-            return print(self.__IsFedded)
+            return print(self._IsFedded)
 
     @property
     def name(self):
-        return self.__Name
+        return self._Name
 
     @name.setter
     def name(self, newName):
-        self.__Name = newName
+        self._Name = newName
 
     @property
     def squad(self):
@@ -68,19 +68,19 @@ class Animal:
             print("так нельзя")
 
     def eat(self, food):
-        if self.__EatenFood < self.__Food:
-            if food in self.__TypeOfFood:
-                self.__EatenFood += 1
-                return print(self.__Name + ":", "хрямкс *жуёт* хрумск ")
-            if food not in self.__TypeOfFood:
+        if self._EatenFood < self._Food:
+            if food in self._TypeOfFood:
+                self._EatenFood += 1
+                return print(self._Name + ":", "хрямкс *жуёт* хрумск ")
+            elif food not in self._TypeOfFood:
                 return print("я такое не ем")
         else:
             return print("я больше не буду")
 
     @property
     def voice(self):
-        return print(self.__Name + ":", self.__Voice)
+        return print(self._Name + ":", self._Voice)
 
     @property
     def play(self):
-        print(self.__Name + ":", "*играет*")
+        print(self._Name + ":", "*играет*")
