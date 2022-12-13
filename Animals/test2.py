@@ -16,38 +16,5 @@ b3 = Wolf('jjfefe3', 32, 3, 8)
 b4 = Wolf('jjfefe4', 32, 3, 8)
 
 
-
 volier = Volier('вольер для жирафов', 'Савана', 45)
 volier2 = Volier('вольер для волков', 'леса умеренных широт, тайга, тундра, степи и горные системы', 32)
-
-
-print(volier.allAnimals)
-print(volier.sizeOfValier)
-volier.AddAnimal(albert1)
-print(volier.allAnimals)
-print(volier.sizeOfValier)
-volier.AddAnimal(albert1)
-print(volier.allAnimals)
-volier.AddAnimal(albert2)
-print(volier.allAnimals)
-print(volier.sizeOfValier)
-
-
-
-volier2.AddAnimal(b1)
-volier2.AddAnimal(b2)
-volier2.AddAnimal(b3)
-volier2.AddAnimal(b4)
-
-print(volier2.allAnimals)
-print(volier2.sizeOfValier)
-
-volier.KillAnimal(albert1)
-print(volier.allAnimals)
-print(volier.sizeOfValier)
-volier.KillAnimal(albert2)
-print(volier.allAnimals)
-print(volier.sizeOfValier)
-
-
-

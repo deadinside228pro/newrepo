@@ -1,6 +1,7 @@
 class Animal:
 
-    def __init__(self, name, age=int, howmanyfoodeat=float, size=float, species=str,habitat=str, typeOfFood = list, squad=str,voice=str ):
+    def __init__(self, name, age=int, howmanyfoodeat=float, size=int, species=str,
+                 habitat=str, typeOfFood = list, squad=str,voice=str,foodVoice=str):
         self._Name =name
         self._Food = howmanyfoodeat
         self.__Age = age
@@ -10,6 +11,7 @@ class Animal:
         self._TypeOfFood = typeOfFood
         self.__Squad = squad
         self._Voice = voice
+        self._FoodVoice = foodVoice
         self._IsFedded = False
         self._EatenFood=0
 
@@ -71,7 +73,7 @@ class Animal:
         if self._EatenFood < self._Food:
             if food in self._TypeOfFood:
                 self._EatenFood += 1
-                return print(self._Name + ":", "хрямкс *жуёт* хрумск ")
+                return print(self._Name + ":", self._FoodVoice)
             elif food not in self._TypeOfFood:
                 return print("я такое не ем")
         else:
