@@ -1,8 +1,8 @@
 class Animal:
 
-    def __init__(self, name, age=int, howmanyfoodeat=float, size=int, species=str,
-                 habitat=str, typeOfFood = list, squad=str,voice=str,foodVoice=str):
-        self._Name =name
+    def __init__(self, name, age=int, howmanyfoodeat=int, size=int, species=str,
+                 habitat=str, typeOfFood=list, squad=str, voice=str, foodVoice=str):
+        self._Name = name
         self._Food = howmanyfoodeat
         self.__Age = age
         self.__Size = size
@@ -13,7 +13,7 @@ class Animal:
         self._Voice = voice
         self._FoodVoice = foodVoice
         self._IsFedded = False
-        self._EatenFood=0
+        self._EatenFood = 0
 
     @property
     def needdedFood(self):
@@ -23,9 +23,9 @@ class Animal:
     def isFedded(self):
         if self._EatenFood >= self._Food:
             self._IsFedded = True
-            return print(self._IsFedded)
+            return self._IsFedded
         else:
-            return print(self._IsFedded)
+            return self._IsFedded
 
     @property
     def name(self):
@@ -73,16 +73,22 @@ class Animal:
         if self._EatenFood < self._Food:
             if food in self._TypeOfFood:
                 self._EatenFood += 1
-                return print(self._Name + ":", self._FoodVoice)
+                print(self._Name + ":", self._FoodVoice, '( потребил в пищу:', food, ')')
+                return
             elif food not in self._TypeOfFood:
-                return print("я такое не ем")
+                #я такое не ем#
+                return
         else:
-            return print("я больше не буду")
+            self._IsFedded = True
+            print("я больше не буду")
+            return
 
     @property
     def voice(self):
-        return print(self._Name + ":", self._Voice)
+        print(self._Name + ":", self._Voice)
+        return
 
     @property
     def play(self):
         print(self._Name + ":", "*играет*")
+        return
