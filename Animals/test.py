@@ -1,6 +1,7 @@
 from Jiraf import *
 from volier import *
 from wolf import *
+from Zoo import *
 
 albert1 = Jiraf('Albert1', 10, 4, 15)
 albert2 = Jiraf('Albert2', 10, 2, 15)
@@ -44,7 +45,12 @@ print(volier.sizeOfVolier)
 volier.AddAnimal(albert1)
 volier.AddAnimal(albert2)
 volier.EatFood(
-    ['морковка', 'морковка', 'морковка', 'морковка', 'морковка', 'морковка', 'морковка', 'морковка', 'морковка',
+    ['морковка', 'морковка', 'морковка', 'морковка','qqq', 'морковка','jjjj', 'морковка', 'морковка', 'морковка', 'морковка',
      'морковка', 'морковка', 'морковка', 'морковка', 'морковка'])
 volier.needFoodAnimal
 volier.foodInManger
+
+
+zoo1 = Zoo('Зоопарк', [volier, volier2])
+print(zoo1.allVoliers)
+print(zoo1.removeAnimal(volier, albert1, volier2))

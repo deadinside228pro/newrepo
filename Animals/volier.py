@@ -25,7 +25,8 @@ class Volier:
         if animal_new in self.__volier:
             return "there is can not be two similar animals"
         if self.__biom != animal_new.habitat:
-            return print('он здесь не уживётся')
+            print('он здесь не уживётся')
+            return
         if self.__size < animal_new.size:
             return False
         if self.__biom == animal_new.habitat and self.__size >= animal_new.size:
@@ -38,7 +39,8 @@ class Volier:
                     self.__size -= animal_new.size
                     return self.__volier.append(animal_new)
         else:
-            return print('он здесь не уживётся')
+            print('он здесь не уживётся')
+            return
 
     def KillAnimal(self, animal):
         if animal in self.__volier:
