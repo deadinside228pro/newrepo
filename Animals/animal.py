@@ -33,7 +33,10 @@ class Animal:
 
     @name.setter
     def name(self, newName):
-        self._Name = newName
+        if type(newName) == str:
+            self._Name = newName
+        else:
+            print('tak nelzya')
 
     @property
     def squad(self):
@@ -69,19 +72,20 @@ class Animal:
         else:
             print("так нельзя")
 
+
     def eat(self, food):
         if self._EatenFood < self._Food:
             if food in self._TypeOfFood:
                 self._EatenFood += 1
                 print(self._Name + ":", self._FoodVoice, '( потребил в пищу:', food, ')')
-                return
+                return True
             elif food not in self._TypeOfFood:
                 #я такое не ем#
-                return
+                return 'я такое не ем'
         else:
             self._IsFedded = True
             print("я больше не буду")
-            return
+            return 'я больше не буду'
 
     @property
     def voice(self):
@@ -92,3 +96,7 @@ class Animal:
     def play(self):
         print(self._Name + ":", "*играет*")
         return
+
+    @property
+    def typeFood(self):
+        return self._TypeOfFood

@@ -1,7 +1,6 @@
-from Jiraf import *
-from volier import *
+from jiraf import *
 from wolf import *
-from Zoo import *
+from zoo import *
 
 albert1 = Jiraf('Albert1', 10, 4, 15)
 albert2 = Jiraf('Albert2', 10, 2, 15)
@@ -45,12 +44,32 @@ print(volier.sizeOfVolier)
 volier.AddAnimal(albert1)
 volier.AddAnimal(albert2)
 volier.EatFood(
-    ['морковка', 'морковка', 'морковка', 'морковка','qqq', 'морковка','jjjj', 'морковка', 'морковка', 'морковка', 'морковка',
+    ['морковка', 'морковка', 'морковка', 'морковка', 'qqq', 'морковка', 'jjjj', 'морковка', 'морковка', 'морковка',
+     'морковка',
      'морковка', 'морковка', 'морковка', 'морковка', 'морковка'])
 volier.needFoodAnimal
-volier.foodInManger
+print(volier.foodInManger)
 
+volier2.AddAnimal(b1)
 
-zoo1 = Zoo('Зоопарк', [volier, volier2])
+volier3 = Volier('lkk', 'Савана', 35)
+
+zoo1 = Zoo("Зоопарк", [volier, volier2])
+
 print(zoo1.allVoliers)
 print(zoo1.removeAnimal(volier, albert1, volier2))
+print(zoo1.removeAnimal(volier2, albert1, volier2))
+
+zoo1.addVolier(volier3)
+print(zoo1.allVoliers)
+
+zoo1.allAnimalsInZoo()
+zoo1.deleteVolier(volier)
+print(zoo1.allVoliers)
+volier3._addFoodInManger(['ppp', 'jjj'])
+print(volier3.foodInManger)
+
+zoo1.addFoodInvoliers([volier, volier3], ['морковка', 'морковка', 'морковка', 'морковка', 'морковка', 'hhh'])
+zoo1.foodInAllmangers()
+zoo1.addFoodInvoliers([volier, volier2], ['hhh', 'jjj'])
+zoo1.foodInAllmangers()
